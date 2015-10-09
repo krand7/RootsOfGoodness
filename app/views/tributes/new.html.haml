@@ -1,0 +1,25 @@
+.content-header
+  .container
+    %h1.centered
+      Awesome, tell us more about
+      = @receiver.name
+    %br
+    %br
+    %br
+    = form_for [@receiver, @tribute], html: { class: 'form-horizontal' } do |f|
+      .form-group
+        = f.text_area :description, placeholder: 'This person has made such a difference in the world by...', rows: 7, class: 'form-control input-lg'
+      %br
+      %br
+      %br
+      %h3.centered.white.f300 Also, let us know a bit about yourself:
+      .form-group
+        = f.label :created_by, 'My Name', class: 'control-label white f300 col-md-2'
+        .col-md-8
+          = f.text_field :created_by, class: 'form-control'
+      .form-group
+        = f.label :email, 'My Email', class: 'control-label white f300 col-md-2'
+        .col-md-8
+          = f.text_field :email, class: 'form-control'
+      .form-group.centered
+        = f.submit 'Continue', class: 'btn btn-success btn-lg'

@@ -1,0 +1,27 @@
+.content-header
+  .container
+    %h1.centered One more thing might help...
+    %br
+    %br
+    %br
+    = form_for @receiver, url: update_more_info_receiver_tribute_path(@receiver, @tribute), method: :patch do |f|
+      %h3.centered.white.f300
+        If you want us to send a special notice to
+        = @receiver.name
+        on your behalf, we'll need their email address!
+        %br
+        %br
+      .form-group
+        = f.text_field :email, autofocus: true, class: 'form-control input-lg'
+      %br
+      %br
+      .form-group.centered
+        = f.submit 'Continue', class: 'btn btn-success btn-lg'
+        &nbsp;
+        &nbsp;
+        = link_to plant_trees_receiver_tribute_path(@receiver, @tribute), class: 'no-underline' do
+          %span.btn-lg
+            Skip
+            &nbsp;
+            %span.glyphicon.glyphicon-arrow-right
+

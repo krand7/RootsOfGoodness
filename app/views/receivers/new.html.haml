@@ -1,0 +1,15 @@
+.content-header
+  .container
+    %h1.centered Who would you like to recognize?
+    %br
+    %br
+    %br
+    = form_for @receiver do |f|
+      .form-group
+        = f.text_field :name, placeholder: 'Start typing...', autofocus: true, class: 'form-control input-lg'
+      %br
+      %br
+      %br
+      .form-group.centered
+        = f.submit 'Continue', class: 'btn btn-success btn-lg'
+

@@ -1,0 +1,76 @@
+#slide1 {
+  background-image: asset-url('slide1_cover1_shading.jpg');
+  background-position: bottom center;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  padding: 20px;
+  position: relative;
+  #dalai-lama-quote {
+    width: 600px;
+    text-align:center;
+    margin: 30px auto;
+    height: 600px;
+    background-color: white;
+    border-radius: 50%;
+    line-height: 600px;
+    position: relative;
+    h1 {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      color: #86C90D;
+      font-size: 71px;
+    }
+    span {
+      position: absolute;
+      bottom: 50px;
+      left: 250px;
+      width: 100px;
+      line-height: normal;
+      font-size: 34px;
+      color: #777;
+    }
+  }
+  #scroll-carat {
+    position:absolute;
+    bottom:30px;
+    width:100%;
+    text-align:center;
+    color: #ddd;
+  }
+}
+
+#slide2 {
+  padding: 50px 20px;
+  h2.captivate {
+    font-size: 34px;
+  }
+  img {
+    max-height: 300px;
+    max-width: 300px;
+  }
+}
+
+#slide3 {
+  padding: 50px 100px;
+  background-color: #9DB01D;
+  color: white;
+  h2 {
+    font-size: 47px;
+  }
+}
+
+#slide4 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+#slide5 {
+  padding: 50px 100px;
+  background-color: #7C4D25;
+  color: white;
+  h2 {
+    font-size: 38px;
+  }
+}

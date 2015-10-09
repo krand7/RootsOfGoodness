@@ -1,0 +1,27 @@
+.tree-wrapper {
+  background-color: #fff;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.tree-form {
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #9DB01D;
+  color: white;
+  .payment-error-container {
+    background-color: #E20000;
+    border-radius: 3px;
+    p {
+      margin: 10px 10px 20px 10px;
+      padding: 5px;
+    }
+  }
+  button {
+    background-color: $primary-brown;
+  }
+  button:hover {
+    color: $primary-green;
+    background-color: lighten($primary-brown, 5);
+  }
+}

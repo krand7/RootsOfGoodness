@@ -1,0 +1,20 @@
+// Place all the styles related to the tributes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#tree-row {
+  background-color: #9DB01D;
+  box-shadow: inset 0 0 0 10px #7C4D25;
+  #white-tree-container {
+    background-color: white;
+    border-radius: 50%;
+  }
+}
+
+.tribute-container {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 2px #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}

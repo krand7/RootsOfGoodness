@@ -1,0 +1,29 @@
+/* This file controls whether base styles or theme styles are used, based on config*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/* Styles */
+@import "colors";
+@import "fonts";
+
+/* Elements */
+@import "links";
+@import "content";
+@import "trees";
+
+/* Layout */
+@import "layout";
+@import "responsive";
+@import "flash_alerts";
+
+/* Static */
+@import "home";
+@import "static/team";
+
+/* Creation */
+@import "creation";
+
+/* Resources */
+@import "tributes";
+@import "receivers";

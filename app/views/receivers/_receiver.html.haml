@@ -1,0 +1,29 @@
+.receiver-container
+  .row
+    - if receiver.photo.present?
+      .col-sm-4
+        = image_tag receiver.photo, class: 'receiver-photo'
+    .col-sm-8
+      %h1
+        = receiver.name
+      %h3
+        %span.dark-green= pluralize(receiver.trees, 'tree')
+        have been planted in
+        = succeed "'s" do
+          = receiver.name
+        = succeed receiver.trees.present? ? '!' : '.' do
+          name
+
+%br
+.row
+  .col-xs-12
+    = link_to "Plant Trees in Honor of #{receiver.name}", new_receiver_tribute_path(receiver), class: 'btn btn-success btn-lg full-width'
+%br
+.row
+  - slice_size = receiver.tributes.size > 3 ? (receiver.tributes.size/3.0).ceil : 1
+  - receiver.tributes.order(trees: :desc).each_slice(slice_size).each do |tribute_group|
+    .col-sm-4
+      - tribute_group.each do |tribute|
+        .tribute-container
+          %p.lead= tribute.description
+          %p.small= "- #{tribute.created_by}"

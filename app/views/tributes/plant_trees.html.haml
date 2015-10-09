@@ -1,0 +1,59 @@
+.content-header
+  .container
+    %h1.centered
+      Now for the best part:
+    %br
+    %h3.white.f300.centered
+      This project is all about recognizing the work of others, while planting strong roots for the future of our planet.
+      We (speaking on behalf of planet earth, here) would love if you honored
+      = @receiver.name
+      by making a donation in their name.
+    %br
+    .row
+      .col-sm-4.col-sm-offset-4
+        = image_tag 'trees/2.png', class: 'img-responsive'
+    %br
+    %br
+    %h3.white.f300.centered
+      A single tree costs just
+      %span.primary-green one dollar
+      to plant.
+      %br
+      %br
+
+    = form_tag charge_trees_receiver_tribute_path(@receiver, @tribute), method: :post, class: 'tree-form form-horizontal', id: 'payment-form' do
+      .payment-errors.payment-error-container
+      .form-group
+        %label.control-label.col-sm-4
+          %span Number of Trees
+        .col-sm-4
+          = text_field_tag :number_of_trees, 10, class: 'form-control', id: 'number_of_trees_input'
+        .col-sm-4
+          %h3#number_of_trees_value{ style: 'margin: 3px'} $10
+      .form-group
+        %label.control-label.col-sm-4
+          %span Card Number
+        .col-sm-4
+          %input.form-control{"data-stripe" => "number", :size => "20", :type => "text"}
+      .form-group
+        %label.control-label.col-sm-4
+          %span CVC
+        .col-sm-2
+          %input.form-control{"data-stripe" => "cvc", :size => "4", :type => "text"}
+      .form-group
+        %label.control-label.col-sm-4
+          %span Expiration (MM/YYYY)
+        .col-sm-6
+          %input.form-control{"data-stripe" => "exp-month", :size => "2", :type => "text", style: "width: auto; display: inline-block"}
+          %span /
+          / %h3{ style: 'margin: 3px'} /
+          %input.form-control{"data-stripe" => "exp-year", :size => "4", :type => "text", style: "width: auto; display: inline-block"}
+      .form-group.centered
+        %br
+        %button.btn.btn-lg{:type => "submit", style: 'margin-bottom: 15px;'} Submit Payment
+        %br
+        (Please only press this button once to prevent multiple charges!)
+    %br
+    .righted
+      = link_to 'https://stripe.com/', target: 'blank' do
+        = image_tag 'icons/powered_by_stripe.png', width: 150

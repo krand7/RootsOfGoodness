@@ -1,0 +1,16 @@
+.container.container-with-padding
+  .row
+    .col-sm-4.col-sm-offset-4
+      = image_tag 'trees/2.png', class: 'img-responsive'
+  - @receivers.in_groups_of(3) do |receiver_group|
+    .row
+      - receiver_group.each do |receiver|
+        - if receiver.present?
+          .col-sm-4
+            = link_to receiver, class: 'receiver-index-link' do
+              .receiver-container.receiver-container-hover
+                - if receiver.photo.present?
+                  = image_tag receiver.photo, class: 'receiver-photo'
+                %h3= receiver.name
+                %h4= pluralize(receiver.trees, 'tree')
+

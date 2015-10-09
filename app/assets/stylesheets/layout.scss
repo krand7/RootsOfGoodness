@@ -1,0 +1,45 @@
+html {
+  background-color: #5E3609;
+}
+
+body {
+  margin-top: 50px;
+}
+
+body.static {
+  margin-top: 0px;
+}
+
+// Navigation
+nav {
+  margin-bottom: 0px;
+}
+.navbar-custom {
+  li {
+    a {
+      color: white;
+    }
+    a:hover {
+      color: $primary-green;
+      background-color: transparent;
+    }
+  }
+}
+
+.navbar-static-custom {
+  position: absolute;
+  top: 0;
+}
+
+.navbar-brand {
+  color: $dark-green;
+}
+.navbar-brand:hover {
+  color: $primary-green;
+}
+
+// Extra classes
+.container-with-padding {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}

@@ -1,0 +1,39 @@
+// Place all the styles related to the static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-header {
+  padding: 25px 20px 5px 20px;
+  background-color: $primary-brown;
+  h1 {
+    color: rgb(255,255,255);
+    font-weight: 300;
+  }
+  p.lead {
+    margin-bottom: 0px;
+    color: rgb(255,255,255);
+  }
+  a {
+    color: rgba(255,255,255,0.8);
+  }
+}
+
+.content-container {
+  margin-bottom: 20px;
+  padding: 20px;
+  .content-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #bbb;
+    background-color: #fafafa;
+  }
+}
+
+.content-container.inherit-background {
+  background: inherit;
+  box-shadow: none;
+}
+
+.horizontal-inset {
+  margin-left: 20px;
+  margin-right: 20px;
+}

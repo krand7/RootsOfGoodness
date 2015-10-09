@@ -1,0 +1,11 @@
+= form_for [@receiver, @tribute] do |f|
+  - if @tribute.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@tribute.errors.count, "error")
+        prohibited this tribute from being saved:
+      %ul
+        - @tribute.errors.full_messages.each do |message|
+          %li= message
+  .actions
+    = f.submit
