@@ -7,7 +7,11 @@ class TributesController < ApplicationController
   end
 
   def update_more_info
-    @receiver.update(receiver_params)
+    if params[:receiver][:email].blank?
+      params[:receiver].delete(:email)
+    else
+      @receiver.update(receiver_params)
+    end
     redirect_to plant_trees_receiver_tribute_path(@receiver, @tribute)
   end
 
