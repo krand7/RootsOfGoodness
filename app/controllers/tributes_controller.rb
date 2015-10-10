@@ -28,13 +28,13 @@ class TributesController < ApplicationController
   # GET /tributes
   # GET /tributes.json
   def index
-    @active_link = 'tributes'
-    @tributes = @receiver.tributes
+    redirect_to @receiver
   end
 
   # GET /tributes/1
   # GET /tributes/1.json
   def show
+    redirect_to @receiver
   end
 
   # GET /tributes/new
@@ -45,6 +45,7 @@ class TributesController < ApplicationController
 
   # GET /tributes/1/edit
   def edit
+    redirect_to @receiver
   end
 
   # POST /tributes
@@ -76,10 +77,7 @@ class TributesController < ApplicationController
   # DELETE /tributes/1.json
   def destroy
     @tribute.destroy
-    respond_to do |format|
-      format.html { redirect_to receiver_url(@receiver), notice: 'Tribute was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to receiver_url(@receiver), notice: 'Tribute was successfully destroyed.'
   end
 
   private

@@ -16,12 +16,12 @@ class ReceiversControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create receiver" do
+  test "should create receiver with just name" do
     assert_difference('Receiver.count') do
-      post :create, receiver: { email: @receiver.email, name: @receiver.name, photo: @receiver.photo, trees: @receiver.trees }
+      post :create, receiver: { name: 'new receiver name' }
     end
 
-    assert_redirected_to receiver_path(assigns(:receiver))
+    assert_redirected_to new_receiver_tribute_path(assigns(:receiver))
   end
 
   test "should show receiver" do
@@ -29,9 +29,9 @@ class ReceiversControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should not get edit" do
     get :edit, id: @receiver
-    assert_response :success
+    assert_redirected_to @receiver
   end
 
   test "should update receiver" do

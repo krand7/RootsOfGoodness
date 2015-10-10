@@ -6,10 +6,9 @@ class TributesControllerTest < ActionController::TestCase
     @tribute = tributes(:one)
   end
 
-  test "should get index" do
+  test "should get index and redirect" do
     get :index, receiver_id: @receiver
-    assert_response :success
-    assert_not_nil assigns(:tributes)
+    assert_redirected_to @receiver
   end
 
   test "should get new" do
@@ -22,17 +21,17 @@ class TributesControllerTest < ActionController::TestCase
       post :create, receiver_id: @receiver, tribute: { description: 'Great person', created_by: 'Me', email: 'giver@giver.org' }
     end
 
-    assert_redirected_to receiver_tribute_path(assigns(:receiver), assigns(:tribute))
+    assert_redirected_to more_info_receiver_tribute_path(assigns(:receiver), assigns(:tribute))
   end
 
-  test "should show tribute" do
+  test "should show tribute and redirect to receiver" do
     get :show, receiver_id: @receiver, id: @tribute
-    assert_response :success
+    assert_redirected_to @receiver
   end
 
-  test "should get edit" do
+  test "should get edit and redirect to receiver" do
     get :edit, receiver_id: @receiver, id: @tribute
-    assert_response :success
+    assert_redirected_to @receiver
   end
 
   test "should update tribute" do

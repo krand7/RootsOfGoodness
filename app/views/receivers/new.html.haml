@@ -7,6 +7,7 @@
     = form_for @receiver do |f|
       .form-group
         = f.text_field :name, placeholder: 'Start typing...', autofocus: true, class: 'form-control input-lg'
+        #existing_receiver_names.hidden{ data: { object: 'receiver-name-typeahead', local: "#{Receiver.current.pluck(:name).to_a.to_json}" } }
       %br
       %br
       %br

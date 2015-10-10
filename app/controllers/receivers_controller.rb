@@ -21,6 +21,7 @@ class ReceiversController < ApplicationController
 
   # GET /receivers/1/edit
   def edit
+    redirect_to @receiver
   end
 
   # POST /receivers
@@ -52,10 +53,7 @@ class ReceiversController < ApplicationController
   # DELETE /receivers/1.json
   def destroy
     @receiver.destroy
-    respond_to do |format|
-      format.html { redirect_to receivers_url, notice: 'Receiver was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to receivers_url, notice: 'Receiver was successfully destroyed.'
   end
 
   private
