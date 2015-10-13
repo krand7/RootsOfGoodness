@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require stripe_publish
 //= require main
 //= require typeahead
 // require_tree ../../../vendor/assets/javascripts/.
