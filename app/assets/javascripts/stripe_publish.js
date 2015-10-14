@@ -1,16 +1,18 @@
 // This identifies your website in the createToken call below
 Stripe.setPublishableKey('pk_test_YW6ibbX7J5LPbpU1mFQuC0lV');
-jQuery(function($) {
-  $('#payment-form').submit(function(event) {
-    event.preventDefault();
-    var $form = $(this);
-    // Disable the submit button to prevent repeated clicks
-    $form.find('button').prop('disabled', true);
+$(document).ready(function() {
+  jQuery(function($) {
+    $('#payment-form').submit(function(event) {
+      event.preventDefault();
+      var $form = $(this);
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
 
-    Stripe.card.createToken($form, stripeResponseHandler);
+      Stripe.card.createToken($form, stripeResponseHandler);
 
-    // Prevent the form from submitting with the default action
-    return false;
+      // Prevent the form from submitting with the default action
+      return false;
+    });
   });
 });
 

@@ -20,12 +20,16 @@ class TributesController < ApplicationController
   end
 
   def charge_trees
-    if number_of_trees = params[:number_of_trees].to_i
-      raise StandardError if params[:stripeToken].blank?
-      @tribute.charge_trees(params[:stripeToken], number_of_trees)
-      redirect_to @receiver, notice: "Thank you, we've received your kind donation. We'll get to work on planting those trees!"
+    if params[:stripeToken].blank?
+      raise StandardError
+      render :plant_trees, notice: 'There was an error processing your kind donation, please try again!'
     else
-      redirect_to :back
+      if number_of_trees = params[:number_of_trees].to_i
+        @tribute.charge_trees(params[:stripeToken], number_of_trees)
+        redirect_to @receiver, notice: "Thank you, we've received your kind donation. We'll get to work on planting those trees!"
+      else
+        render :plant_trees, notice: 'There was an error processing your kind donation, please try again!'
+      end
     end
   end
 
