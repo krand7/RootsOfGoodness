@@ -1,4 +1,4 @@
-class Tribute < ActiveRecord::Base
+class Tribute < ApplicationRecord
   # Default Scope
   # Constants
   STATUS = [['Pending', 'pending'], ['Approved', 'approved']]

@@ -1,4 +1,4 @@
-class Receiver < ActiveRecord::Base
+class Receiver < ApplicationRecord
   # Default Scope
   # Constants
   # Attribute related macros
