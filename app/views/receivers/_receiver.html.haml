@@ -26,4 +26,9 @@
       - tribute_group.each do |tribute|
         .tribute-container
           %p.lead= tribute.description
-          %p.small= "- #{tribute.created_by}"
+          .row
+            .col-sm-10
+              %p.small= "- #{tribute.created_by}"
+            - if tribute.trees > 0
+              .col-sm-2
+                = image_tag 'trees/2.png', class: 'img-responsive', "data-toggle": "tooltip", "data-placement": "left", title: tribute.trees
