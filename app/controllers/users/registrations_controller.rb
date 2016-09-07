@@ -46,13 +46,13 @@ before_action :check_admin!
   protected
 
   # You can put the params you want to permit in the empty array.
-  def sign_up_params
+  def configure_sign_up_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,)
   end
 
   # You can put the params you want to permit in the empty array.
   #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  def account_update_params
+  def configure_account_update_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,)
   end
 
