@@ -1,15 +1,17 @@
-- if flash[:notice]
-  .flash-notice
-    .container
-      .lead.centered-text
-        = flash[:notice].html_safe
-- if flash[:alert]
-  .flash-alert
-    .container
-      .lead.centered-text
-        = flash[:alert].html_safe
-- if flash[:warning]
-  .flash-warning
-    .container
-      .lead.centered-text
-        = flash[:warning].html_safe
+- if flash.present?
+  %div{style: 'margin-top:50px;'}
+    - if flash[:notice]
+      .flash-notice
+        .container
+          .lead.centered-text
+            = flash[:notice].html_safe
+    - if flash[:alert]
+      .flash-alert
+        .container
+          .lead.centered-text
+            = flash[:alert].html_safe
+    - if flash[:warning]
+      .flash-warning
+        .container
+          .lead.centered-text
+            = flash[:warning].html_safe

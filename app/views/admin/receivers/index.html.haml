@@ -1,0 +1,16 @@
+.container
+  %h1.white Donation receivers
+  - @receivers.in_groups_of(3) do |receiver_group|
+    .row
+      - receiver_group.each do |receiver|
+        - if receiver.present?
+          .col-sm-4
+            = link_to admin_receiver_path(receiver) do
+              .receiver-container
+                %p.large= receiver.name
+                %p.small.muted= 'Created on ' + receiver.created_at.to_s
+                %hr
+                %p
+                  = receiver.tributes.count
+                  tributes with donations totaling
+                  = receiver.trees.to_s.prepend("$")

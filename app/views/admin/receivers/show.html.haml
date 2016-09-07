@@ -1,0 +1,30 @@
+.container.container-with-padding
+	%h1.white
+		= @receiver.name 
+		= surround '(', ')' do
+			= @receiver.email
+	%p.white
+		Received first tribute on
+		%span.lighter-green= @receiver.tributes.first.created_at
+		by 
+		= @receiver.tributes.first.created_by 
+		= surround '(', ')' do
+			= @receiver.tributes.first.email
+		and has since received
+		%span.lighter-green= @receiver.trees.to_s.prepend('$')
+		through a total of
+		%span.lighter-green= @receiver.tributes.count
+		tributes.
+	%hr
+	.row
+		- slice_size = @receiver.tributes.size > 3 ? (@receiver.tributes.size/3.0).ceil : 1
+		- @receiver.tributes.order(trees: :desc).each_slice(slice_size).each do |tribute_group|
+			.col-sm-4
+				- tribute_group.each do |tribute|
+					.tribute-container
+						%p.f300= "#{tribute.created_by} (#{tribute.email}) on #{tribute.created_at}"
+						%p.lead
+							Donation: 
+							%span{class: "#{tribute.trees > 0 ? 'darker-green' : 'black'}"}= "$#{tribute.trees}"
+						%hr
+						%p= tribute.description

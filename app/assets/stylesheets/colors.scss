@@ -27,3 +27,7 @@ $dark-green: #9DB01D;
   background: linear-gradient(to bottom,  #5e3609 0%,#7c4d25 32%,#7c4d25 32%,#7c4d25 72%,#5e3609 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e3609', endColorstr='#5e3609',GradientType=0 ); /* IE6-9 */
 }
+
+.muted {
+  color: #bbb;
+}

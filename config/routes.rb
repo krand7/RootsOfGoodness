@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :receivers do
     resources :tributes do
       member do
@@ -17,6 +18,11 @@ Rails.application.routes.draw do
     get :privacy
     get :about
     get :team
+  end
+
+  namespace 'admin' do
+    get :index
+    resources :receivers
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

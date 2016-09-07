@@ -19,6 +19,8 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
+gem 'devise' # User auth
+
 gem 'redcarpet', '~> 3.3.2' # Markdown Support
 gem 'carrierwave', '~> 0.11.1' # Photo Uploads
 gem 'figaro',               '~> 1.1.1'            # Centralized Configuration
