@@ -18,14 +18,14 @@ before_action :check_admin!
 
   # GET /resource/edit
   def edit
-    # super
-    redirect_to root_path
+    super
+    # redirect_to root_path
   end
 
   # PUT /resource
   def update
-    # super
-    redirect_to root_path
+    super
+    # redirect_to root_path
   end
 
   # DELETE /resource
