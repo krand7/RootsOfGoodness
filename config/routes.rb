@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    get :index
+    get '/', to: redirect('/admin/receivers')
     resources :receivers
   end
 

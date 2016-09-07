@@ -28,3 +28,5 @@
 							%span{class: "#{tribute.trees > 0 ? 'darker-green' : 'black'}"}= "$#{tribute.trees}"
 						%hr
 						%p= tribute.description
+						%hr
+						= link_to 'Delete', receiver_tribute_path(@receiver, tribute), method: :delete, class: 'btn btn-danger'

@@ -8,6 +8,7 @@
 @loaders = () ->
   mainLoader()
   receiverLoader() if $('[data-object~="receiver-name-typeahead"]').length > 0
+  actionLoader()
 
 $(document).ready(loaders)
 $(document)

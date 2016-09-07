@@ -5,12 +5,12 @@
       - receiver_group.each do |receiver|
         - if receiver.present?
           .col-sm-4
-            = link_to admin_receiver_path(receiver) do
-              .receiver-container
-                %p.large= receiver.name
-                %p.small.muted= 'Created on ' + receiver.created_at.to_s
-                %hr
-                %p
-                  = receiver.tributes.count
-                  tributes with donations totaling
-                  = receiver.trees.to_s.prepend("$")
+            .receiver-container
+              %h3.f300= link_to receiver.name, admin_receiver_path(receiver)
+              %p
+                = receiver.tributes.count
+                tributes with donations totaling
+                %span.darker-green= receiver.trees.to_s.prepend("$")
+              %p.small.muted= 'Created on ' + receiver.created_at.to_s
+              %hr
+              = link_to 'Delete', receiver, method: :delete, class: 'btn btn-danger'
