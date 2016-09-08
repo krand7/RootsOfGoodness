@@ -17,7 +17,6 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = ENV["emails_enabled"]
   config.action_mailer.raise_delivery_errors = ENV["emails_enabled"]
 
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
