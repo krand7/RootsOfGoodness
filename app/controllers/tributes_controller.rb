@@ -61,6 +61,7 @@ class TributesController < ApplicationController
   def create
     @tribute = @receiver.tributes.new(tribute_params)
     if @tribute.save
+      TributeMailer.thank_you_email(@tribute).deliver_later
       redirect_to @receiver.complete? ? plant_trees_receiver_tribute_path(@receiver, @tribute) : more_info_receiver_tribute_path(@receiver, @tribute)
     else
       render :new

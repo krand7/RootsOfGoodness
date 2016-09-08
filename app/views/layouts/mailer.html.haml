@@ -1,0 +1,79 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+	%head
+		%meta{content: "width=device-width", name: "viewport"}
+		%meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+		%title Roots of Goodness
+		= stylesheet_link_tag    'email_basic', media: 'all', 'data-turbolinks-track' => true
+	%body{bgcolor: "#FFFFFF"}
+		/ HEADER
+		%table.head-wrap{style: 'background: #9db01d'}
+			%tr
+				%td
+				%td.header.container
+					.content
+						%table
+							%tr
+								%td
+									= image_tag 'trees/3.png', class: 'img-responsive', style: 'max-width: 50px'
+									%h4.collapse{style: "display:inline-block; position:relative; top: -10px; font-weight: 700; font-family: 'Raleway', 'Arial', sans-serif; color: #fff;"} Roots of Goodness
+				%td
+		%table.body-wrap
+			%tr
+				%td
+				%td.container{:bgcolor => "#FFFFFF"}
+					.content
+						%table
+							%tr
+								%td
+									= yield
+									%br
+									%br
+									%table.social{width: "100%; "}
+										%tr
+											%td
+												/ column 1
+												%table.column{align: "left"}
+													%tr
+														%td
+															%h5 Connect with Us:
+															%p
+																%a.soc-btn.fb{href: "https://www.facebook.com/rootsofgoodness"} Facebook
+																%a.soc-btn.tw{href: "https://twitter.com/RootsOGoodness"} Twitter
+																%a.soc-btn.web{href: "https://rootsofgoodness.org"} Website
+												/ /column 1
+												/ column 2
+												%table.column{:align => "left"}
+													%tr
+														%td
+															%h5 Want to get involved?
+															%p
+																Introduce yourself and tell us more by reaching out to
+																%strong
+																	%a{href: "mailto:samantha@rootsofgoodness.org"} samantha@rootsofgoodness.org
+												/ /column 2
+												%span.clear
+									/ /social & contact
+					/ /content
+				%td
+		/ /BODY
+		/ FOOTER
+		- if false
+			%table.footer-wrap
+				%tr
+					%td
+					%td.container
+						/ content
+						.content
+							%table
+								%tr
+									%td{:align => "center"}
+										%p
+											%a{:href => "#"} Terms
+											|
+											%a{:href => "#"} Privacy
+											|
+											%a{:href => "#"}
+												%unsubscribe Unsubscribe
+						/ /content
+					%td
