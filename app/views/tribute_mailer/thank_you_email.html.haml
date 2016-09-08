@@ -1,20 +1,15 @@
-!!!
-%html
-	%head
-		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-	%body
-		%p
-			Dear #{@tribute.created_by},
-		%p
-			%strong Thank you
-			for taking a moment to recognize the good deeds of others! With your recognition and support, together we can spread goodness to one another while making the world a healthier place.
-			%br/
-		%p
-			We're in the process of partnering with an existing conservation organization that will be able to make the strongest impact with the money we raise here. If you have a conservancy campaign or effort that you would prefer to support, please contact us and let us know. Our priority is to make the biggest possible impact on protecting our environment. Send an email directly to 
-			= succeed '.' do
-				= link_to 'samantha@rootsofgoodness.org', 'mailto:samantha@rootsofgoodness.org'
-		%br
-		%p
-			Thanks again for spreading kindness and appreciation :)
-			%br
-			\- Kyle & Samantha
+%p
+	Dear #{@tribute.created_by},
+%p
+	%strong Thank you
+	for taking a moment to recognize the good deeds of others! With your recognition and support, together we can spread goodness to one another while making the world a healthier place.
+	%br/
+%p
+	We're in the process of partnering with an existing conservation organization that will be able to make the strongest impact with the money we raise here. If you have a conservancy campaign or effort that you would prefer to support, please contact us and let us know. Our priority is to make the biggest possible impact on protecting our environment. Send an email directly to 
+	= succeed '.' do
+		= link_to 'samantha@rootsofgoodness.org', 'mailto:samantha@rootsofgoodness.org'
+%br
+%p
+	Thanks again for spreading kindness and appreciation :)
+	%br
+	\- Kyle & Samantha

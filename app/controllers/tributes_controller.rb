@@ -11,6 +11,7 @@ class TributesController < ApplicationController
       params[:receiver].delete(:email)
     else
       @receiver.update(receiver_params)
+      ReceiverMailer.congrats_email(@tribute).deliver_later
     end
     redirect_to plant_trees_receiver_tribute_path(@receiver, @tribute)
   end

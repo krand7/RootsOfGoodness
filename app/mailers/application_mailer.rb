@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'kyle@rootsofgoodness.org'
+  default from: 'noreply@rootsofgoodness.org'
   layout 'mailer'
 end
 
