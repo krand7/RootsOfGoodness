@@ -4,76 +4,78 @@
 		%meta{content: "width=device-width", name: "viewport"}
 		%meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
 		%title Roots of Goodness
-		= stylesheet_link_tag 'https://rootsofgoodness.org/assets/email_basic-5f3f383df1b6993dfed3dc8069a47bd12ef6b60997e9bfd524cc44888a753a30.css', media: 'all', 'data-turbolinks-track' => true
-	%body{bgcolor: "#FFFFFF"}
+	%body{bgcolor: "#FFFFFF", style: "-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:none;width:100%!important;height: 100%;font-weight:300;margin:0;"}
 		/ HEADER
-		%table.head-wrap{style: 'background: #9db01d'}
+		%table.head-wrap{style: "background: #9db01d;width:100%;"}
 			%tr
 				%td
-				%td.header.container
-					.content
-						%table
+				%td.header.container{style:"display:block!important;max-width:600px!important;margin:0 auto!important;clear:both!important;"}
+					.content{style:"padding:15px;max-width:600px;margin:0 auto;display:block;"}
+						%table{style:"width: 100%;"}
 							%tr
 								%td
 									= image_tag 'https://rootsofgoodness.org/assets/trees/3-4f10c02245e705adcb04653315bb2f60ec3e1c2c05829acffe343ef779db06d0.png', class: 'img-responsive', style: 'max-width: 50px'
-									%h4.collapse{style: "display:inline-block; position:relative; top: -10px; font-weight: 700; font-family: 'Raleway', 'Arial', sans-serif; color: #fff;"} Roots of Goodness
+									%h4.collapse{style: "margin:0!important;padding:0;display:inline-block; position:relative; top: -10px; font-weight: 700; font-family: 'Raleway', 'Arial', sans-serif; color: #fff;"} Roots of Goodness
 				%td
-		%table.body-wrap
+		%table.body-wrap{style:"width:100%;"}
 			%tr
 				%td
-				%td.container{:bgcolor => "#FFFFFF"}
-					.content
-						%table
+				%td.container{bgcolor: "#FFFFFF", style: "display:block!important;max-width:600px!important;margin:0 auto!important;clear:both!important;"}
+					.content{style: "max-width:600px;display:block;margin:0;padding:0;font-family:'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif;"}
+						%table{style:"width: 100%;"}
 							%tr
 								%td
 									= yield
 									%br
 									%br
-									%table.social{width: "100%; "}
+									%table.social{width: "100%;", style: "background-color: #ebebeb;"}
 										%tr
 											%td
 												/ column 1
-												%table.column{align: "left"}
+												%table.column{align: "left", style: "width: 280px;min-width: 279px;float:left;"}
 													%tr
-														%td
-															%h5 Connect with Us:
+														%td{style: "padding: 15px;"}
+															%h5{style:"margin-bottom:15px;"} Connect with Us:
 															%p
-																%a.soc-btn.fb{href: "https://www.facebook.com/rootsofgoodness"} Facebook
-																%a.soc-btn.tw{href: "https://twitter.com/RootsOGoodness"} Twitter
-																%a.soc-btn.web{href: "https://rootsofgoodness.org"} Website
+																%a.soc-btn.fb{href: "https://www.facebook.com/rootsofgoodness", style: "padding:3px 7px;font-size:12px;margin-bottom:10px;text-decoration:none;color:#FFF;font-weight:bold;display:block;text-align:center;background-color: #3B5998!important;display:block;width:100%"}
+																	Facebook
+																%a.soc-btn.tw{href: "https://twitter.com/RootsOGoodness", style: "padding:3px 7px;font-size:12px;margin-bottom:10px;text-decoration:none;color:#FFF;font-weight:bold;display:block;text-align:center;background-color: #1daced!important;display:block;width:100%"}
+																	Twitter
+																%a.soc-btn.web{href: "https://rootsofgoodness.org", style: "padding:3px 7px;font-size:12px;margin-bottom:10px;text-decoration:none;color:#FFF;font-weight:bold;display:block;text-align:center;background-color: #9db01d!important;display:block;width:100%"}
+																	Website
 												/ /column 1
 												/ column 2
-												%table.column{:align => "left"}
+												%table.column{align: "left", style: "width: 280px;min-width: 279px;float:left;"}
 													%tr
-														%td
-															%h5 Want to get involved?
-															%p
+														%td{style: "padding: 15px;"}
+															%h5{style:"margin-bottom:15px;"} Want to get involved?
+															%p{style:"font-size:14px;"}
 																Introduce yourself and tell us more by reaching out to
-																%strong
-																	%a{href: "mailto:samantha@rootsofgoodness.org"} samantha@rootsofgoodness.org
+																%span{style:"font-weight:500"}
+																	%a{href: "mailto:samantha@rootsofgoodness.org", style: "color: #2BA6CB;"} samantha@rootsofgoodness.org
 												/ /column 2
-												%span.clear
+												%span.clear{style:"display: block; clear: both;"}
 									/ /social & contact
 					/ /content
 				%td
 		/ /BODY
 		/ FOOTER
 		- if false
-			%table.footer-wrap
+			%table.footer-wrap{style:"width: 100%;	clear:both!important;"}
 				%tr
 					%td
-					%td.container
+					%td.container{style: "display:block!important;max-width:600px!important;margin:0 auto!important;clear:both!important;"}
 						/ content
-						.content
-							%table
+						.content{style:"padding:15px;max-width:600px;margin:0 auto;display:block;"}
+							%table{style:"width: 100%;"}
 								%tr
 									%td{:align => "center"}
-										%p
-											%a{:href => "#"} Terms
+										%p{style:"border-top: 1px solid rgb(215,215,215); padding-top:15px;font-size:10px;font-weight:bold"}
+											%a{href: "#", style: "color: #2BA6CB;"} Terms
 											|
-											%a{:href => "#"} Privacy
+											%a{href: "#", style: "color: #2BA6CB;"} Privacy
 											|
-											%a{:href => "#"}
+											%a{href: "#", style: "color: #2BA6CB;"}
 												%unsubscribe Unsubscribe
 						/ /content
 					%td

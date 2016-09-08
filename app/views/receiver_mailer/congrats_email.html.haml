@@ -10,12 +10,11 @@
 		Thanks to the good impact you have on the world, #{@tribute.created_by} has written a public letter of appreciation.
 	To see their note, click 
 	= succeed '.' do
-		= link_to 'here', receiver_url(@receiver)
-%br
+		= link_to 'here', receiver_url(@receiver), style: "color: #2BA6CB;"
 %p
 	Thank you for spreading goodness in the world!
 	%br
 	\- Kyle & Samantha
 %br
-%p.callout
+%p{style:"padding:15px;background-color:#ECF8ED;margin-bottom: 15px;"}
 	If you are interested in learning more or have someone in mind you would like to recognize for their generosity, please check out our website.
