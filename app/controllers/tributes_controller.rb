@@ -11,7 +11,7 @@ class TributesController < ApplicationController
       params[:receiver].delete(:email)
     else
       @receiver.update(receiver_params)
-      ReceiverMailer.congrats_email(@tribute).deliver_later
+      ReceiverMailer.congrats_email(@tribute).deliver_now
     end
     redirect_to plant_trees_receiver_tribute_path(@receiver, @tribute)
   end
@@ -62,7 +62,7 @@ class TributesController < ApplicationController
   def create
     @tribute = @receiver.tributes.new(tribute_params)
     if @tribute.save
-      TributeMailer.thank_you_email(@tribute).deliver_later
+      TributeMailer.thank_you_email(@tribute).deliver_now
       redirect_to @receiver.complete? ? plant_trees_receiver_tribute_path(@receiver, @tribute) : more_info_receiver_tribute_path(@receiver, @tribute)
     else
       render :new
