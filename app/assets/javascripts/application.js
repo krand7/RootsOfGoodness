@@ -18,4 +18,5 @@
 //= require stripe_publish
 //= require main
 //= require typeahead
+//= require google_analytics
 //= require_tree .
