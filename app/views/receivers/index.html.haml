@@ -12,5 +12,11 @@
                 - if receiver.photo.present?
                   = image_tag receiver.photo, class: 'receiver-photo'
                 %h3= receiver.name
-                %h4= pluralize(receiver.trees, 'tree')
+                / %h4.f400= pluralize(receiver.tributes.count, 'messages')
+                .tribute-counter
+                  = image_tag 'chat2.png', class: 'img-responsive'
+                  %span= receiver.tributes.count
+                  &nbsp;
+                  = image_tag 'trees/3.png', class: 'img-responsive'
+                  %span= receiver.trees
 

@@ -6,12 +6,36 @@
   background-color: white;
   border-radius: 3px;
   box-shadow: 2px 2px 2px 2px #fff;
+  margin-bottom: 20px;
   padding: 10px;
+  position: relative;
+
   img.receiver-photo {
     border-radius: 10%;
     box-shadow: 2px 2px 5px #777;
     margin: auto;
     max-width: 350px;
+  }
+
+  h3 {
+    margin-bottom: 18px;
+  }
+
+  .tribute-counter {
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+
+    img {
+      display: inline;
+      max-width: 25px;
+    }
+
+    span {
+      margin-left: -3px;
+      font-size: 14px;
+      font-weight: 400;
+    }
   }
 }
 
